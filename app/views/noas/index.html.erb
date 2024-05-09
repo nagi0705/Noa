@@ -1,0 +1,7 @@
+<!-- app/views/noas/index.html.erb -->
+<h1>All Entries</h1>
+<ul>
+  <% @noas.each do |noa| %>
+    <li><%= link_to noa.animal, noa %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,25 @@
+<%= form_with model: @noa, local: true do |form| %>
+<% if @noa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@noa.errors.count, "error") %> prohibited this noa from being saved:</h2>
+      <ul>
+      <% @noa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<h1>ペットのことを教えてね♡</h1>
+  <p>あなたの飼っているペットはなあに？(例:犬)
+    <%= form.label :animal %>
+    <%= form.text_field :animal %>
+  </p>
+  <p>種類はなあに？(例:チワワ)
+    <%= form.label :kinds %>
+    <%= form.text_field :kinds %>
+  </p>
+  <p>
+    <%= form.submit "Save" %>
+  </p>
+  <%= image_tag("57C12FED-9B41-41E9-8C83-659B91135A7C_1_105_c.jpeg", alt: "Description of the image") %>
+<% end %>
